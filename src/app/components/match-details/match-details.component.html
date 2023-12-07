@@ -1,0 +1,24 @@
+<div class="dashboard-wrapper container w-100 my-3 py-3 d-flex flex-column align-items-center justify-content-center ">
+    
+    <div class="w-100 d-flex justify-content-between">
+        <h4 class="mb-0 ">Showing Last 10 Results</h4>
+        <button class="btn btn-primary" (click)="goBackToPrevPage()">Go Back</button>
+    </div>
+    <div class="fixtures-wrapper my-4">
+        <table class="w-100">
+            <thead>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of last10Fixtures">
+                    <td class="text-right"><img [src]="data.homeLogo" style="width: 50px; height: 50px;" alt="Home Team Logo" /></td>
+                    <td style="padding-left: 35px;">{{data.homeName}}</td>
+                    <td ><div style="background-color: #000; color: white; font-weight: 800;border: 1px solid #000;text-align: center;border-radius: 3px;">{{data.homeGoal}}</div></td>
+                    <td class="text-center"> - </td>
+                    <td class="text-right"><div  style="background-color: #000; color: white; font-weight: 800;border: 1px solid #000;text-align: center;border-radius: 3px;">{{data.awayGoal}}</div></td>
+                    <td class="text-right" style="padding-right: 35px;">{{data.awayName}}</td>
+                    <td ><img [src]="data.awayLogo" style="width: 50px; height: 50px;" alt="Away Team Logo" /></td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

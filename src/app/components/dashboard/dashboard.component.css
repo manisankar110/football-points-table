@@ -1,0 +1,28 @@
+.dashboard-wrapper, .top-league-list{
+    border: 1.5px solid gray;
+    border-radius: 10px;
+}
+
+.top-league-list ul{
+    list-style-type: none;
+    margin-right: 35px;
+    margin-bottom: 0;
+}
+
+.top-league-list li{
+    display: inline;
+    padding: 15px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid gray;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+  }

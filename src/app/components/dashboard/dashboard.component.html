@@ -1,0 +1,38 @@
+<div class="dashboard-wrapper container w-100 my-3 py-3 d-flex flex-column align-items-center justify-content-center ">
+    <h4 class="mb-0 ">FOOTBALL UPDATES</h4>
+    <div class="py-3 top-league-list my-3">
+        <ul>
+            <li *ngFor="let data of topFootballLeagues">
+                <span style="cursor: pointer;" :id="{{data.name + 'Select'}}" [routerLink]="['/', data.name]" (click)="getStandingDetails(data.id)">{{data.name | titlecase }}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w-100">
+        <table>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Name</th>
+              <th>Games</th>
+              <th>W</th>
+              <th>L</th>
+              <th>D</th>
+              <th>Goal Difference</th>
+              <th>Points</th>
+            </tr>
+            <tr *ngFor="let data of standingsDetails">
+                <td >{{data.rank}}</td>
+                <td ><img [src]="data.logo" style="width: 20px; height: 20px;" alt="Team Logo" /></td>
+                <td class="text-left">
+                    <a (click)="teamClicked(data.teamId)">{{data.teamName}}</a>
+                </td>
+                <td >{{data.played}}</td>
+                <td >{{data.win}}</td>
+                <td >{{data.lose}}</td>
+                <td >{{data.draw}}</td>
+                <td >{{data.goalsDiff}}</td>
+                <td >{{data.totalPoints}}</td>
+            </tr>
+          </table>
+    </div>
+</div>

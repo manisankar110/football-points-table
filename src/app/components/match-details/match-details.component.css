@@ -1,0 +1,13 @@
+.fixtures-wrapper{
+    border:1.5px solid gray;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.fixtures-wrapper table td{
+    min-width: 60px;
+    height: 100px;
+    min-height: 400px;
+    font-size: 25px;
+}
