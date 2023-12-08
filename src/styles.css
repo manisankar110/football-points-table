@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.league-button{
+    border: none;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.active-link, .league-button:hover{
+    background-color: #00427c;
+
+    color: #fff;
+}

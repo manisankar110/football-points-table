@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectedLeagueDetails, StandingsDetails } from '../../models/shared.models';
-import { GetDashboardRouterParams, SelectedLeague, StandingResponse, TopFootballLeagues, StandingsModel } from '../../models/standing.models';
+import { GetDashboardRouterParams, StandingResponse, TopFootballLeagues, StandingsModel } from '../../models/standing.models';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +14,6 @@ export class DashboardComponent {
 
   constructor( private SharedService: SharedService, private route: ActivatedRoute, private router: Router) { }
   
-  public selectedleague: SelectedLeague[] = [];
   public routeParams: string = '';
   public topFootballLeagues: TopFootballLeagues[] = [
       { id:39, name: 'england' },
@@ -48,7 +47,6 @@ export class DashboardComponent {
   }
 
   getStandingDetails(id: number){
-    this.selectedleague =  this.topFootballLeagues.filter( (leagueID: TopFootballLeagues) => leagueID.id === id);
     let params:{ id:number, season:number } = {
       id: id,
       season: this.currentSeason

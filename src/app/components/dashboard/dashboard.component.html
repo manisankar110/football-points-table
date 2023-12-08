@@ -3,12 +3,12 @@
     <div class="py-3 top-league-list my-3">
         <ul>
             <li *ngFor="let data of topFootballLeagues">
-                <span style="cursor: pointer;" :id="{{data.name + 'Select'}}" [routerLink]="['/', data.name]" (click)="getStandingDetails(data.id)">{{data.name | titlecase }}</span>
+                <button class="league-button" :id="{{data.name + 'Select'}}" [routerLink]="['/', data?.name]" routerLinkActive="active-link" (click)="getStandingDetails(data.id)">{{data.name | titlecase }}</button>
             </li>
         </ul>
     </div>
     <div class="w-100">
-        <table>
+        <table aria-describedby="Standing Table">
             <tr>
               <th></th>
               <th></th>

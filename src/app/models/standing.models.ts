@@ -1,4 +1,4 @@
-export interface StandingsModel {
+  export interface StandingsModel {
     get: string
     parameters: Parameters
     errors: Errors
@@ -112,8 +112,4 @@ export interface StandingsModel {
     leagueId?: string
   }
 
-  export interface SelectedLeague{
-    id: number,
-    name: string
-  }
   
