@@ -37,13 +37,14 @@ export class DashboardComponent {
   ngOnInit(): void {
     this.route.params.subscribe((params: GetDashboardRouterParams) => {
       this.routeParams = params.leagueId ? params.leagueId : ''
+      console.log('this.routeParams======',this.routeParams)
     });
 
     if(this.routeParams == null || this.routeParams == '' ){
         this.router.navigate(['/england']);    
     }else{
         let findLeagueId = this.topFootballLeagues.filter( (x: TopFootballLeagues) => x.name == this.routeParams)
-        this.getStandingDetails(findLeagueId[0].id);
+        // this.getStandingDetails(findLeagueId[0].id);
     }
   }
 
