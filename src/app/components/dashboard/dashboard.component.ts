@@ -3,7 +3,9 @@ import { SharedService } from '../../services/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectedLeagueDetails, StandingsDetails } from '../../models/shared.models';
 import { GetDashboardRouterParams, SelectedLeague, StandingResponse, TopFootballLeagues, StandingsModel } from '../../models/standing.models';
-
+interface paramsData{
+  league?: string
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -35,17 +37,20 @@ export class DashboardComponent {
   public currentSeason: number = (new Date()).getFullYear();
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: GetDashboardRouterParams) => {
-      this.routeParams = params.leagueId ? params.leagueId : ''
-      console.log('this.routeParams======',this.routeParams)
-    });
-
-    if(this.routeParams == null || this.routeParams == '' ){
-        this.router.navigate(['/england']);    
-    }else{
-        let findLeagueId = this.topFootballLeagues.filter( (x: TopFootballLeagues) => x.name == this.routeParams)
-        // this.getStandingDetails(findLeagueId[0].id);
-    }
+    // alert()
+    this.route.queryParams
+      .subscribe((params: paramsData) => {
+        console.log(params)
+        // let paramsData = params.league ?? 'england'
+        //   this.router.navigate(
+        //     ['/dashboard'],
+        //     { queryParams: { league: paramsData } 
+        //   });
+        //   let findLeagueId = this.topFootballLeagues.filter( (x: TopFootballLeagues) => x.name == paramsData)
+        //   console.log('findLeagueId-----',findLeagueId)
+          // this.getStandingDetails(findLeagueId[0].id);
+      }
+    );
   }
 
   getStandingDetails(id: number){
@@ -88,6 +93,10 @@ export class DashboardComponent {
   }
 
   teamClicked(teamId: number){
+    // this.router.navigate(
+    //   ['/match-details'],
+    //   { queryParams: { league: teamId } 
+    // });
     this.router.navigate(['/',this.routeParams, teamId]);
   }
 

@@ -23,7 +23,7 @@ export class MatchDetailsComponent {
       this.selectedTeamId = params.id
       this.selectedLeagueId = params.leagueId
     });
-    this.getTeamFixture();
+    // this.getTeamFixture();
   }
 
   getTeamFixture(){

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
+interface paramsData{
+  league?: string
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,9 +11,20 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Angular-step2-task';
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute,) { }
 
   ngOnInit() : void{
-    this.router.navigate(['/england']);  
+    this.route.queryParams
+    .subscribe((params: paramsData) => {
+      console.log(params.league)
+      let paramsData = params.league ?? 'england'
+      this.router.navigate(['/', paramsData])
+        // this.router.navigate(
+        //   ['/dashboard'],
+        //   { queryParams: { league: paramsData } 
+        // });
+    }
+  );
   }
 }
+// `/${paramsData}`

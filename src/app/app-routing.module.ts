@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-  },
-  {
-    path: ':leagueId',
     component: DashboardComponent,
   },
-  { path: ':leagueId/:id', component: MatchDetailsComponent },
+  {
+    path: ':league',
+    component: DashboardComponent,
+  },
+  { path: ':league/:id', component: MatchDetailsComponent },
 ];
 
 @NgModule({
