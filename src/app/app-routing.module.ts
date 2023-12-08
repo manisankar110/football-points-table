@@ -9,10 +9,10 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'football-points-table/:leagueId',
+    path: ':leagueId',
     component: DashboardComponent,
   },
-  { path: 'football-points-table/:leagueId/:id', component: MatchDetailsComponent },
+  { path: ':leagueId/:id', component: MatchDetailsComponent },
 ];
 
 @NgModule({
