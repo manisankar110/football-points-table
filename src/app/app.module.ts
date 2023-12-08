@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatchDetailsComponent } from './components/match-details/match-details.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MatchDetailsComponent } from './components/match-details/match-details.
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy, 
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
