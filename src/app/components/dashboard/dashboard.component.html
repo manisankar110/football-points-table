@@ -3,8 +3,8 @@
     <div class="py-3 top-league-list my-3">
         <ul>
             <li *ngFor="let data of topFootballLeagues">
-                <span style="cursor: pointer;" :id="{{data.name + 'Select'}}" [routerLink]="['/dashboard']" [queryParams]="{league: data.name}" (click)="getStandingDetails(data.id)">{{data.name | titlecase }}</span>
-            </li> 
+                <span style="cursor: pointer;" :id="{{data.name + 'Select'}}" [routerLink]="['/', data.name]" (click)="getStandingDetails(data.id)">{{data.name | titlecase }}</span>
+            </li>
         </ul>
     </div>
     <div class="w-100">
