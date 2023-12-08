@@ -5,14 +5,14 @@ import { MatchDetailsComponent } from './components/match-details/match-details.
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'football-points-table',
     component: DashboardComponent,
   },
   {
-    path: ':leagueId',
+    path: 'football-points-table/:leagueId',
     component: DashboardComponent,
   },
-  { path: ':leagueId/:id', component: MatchDetailsComponent },
+  { path: 'football-points-table/:leagueId/:id', component: MatchDetailsComponent },
 ];
 
 @NgModule({
