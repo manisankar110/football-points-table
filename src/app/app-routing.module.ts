@@ -5,7 +5,7 @@ import { MatchDetailsComponent } from './components/match-details/match-details.
 
 const routes: Routes = [
   {
-    path: 'football-points-table',
+    path: '',
     component: DashboardComponent,
   },
   {
